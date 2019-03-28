@@ -23,7 +23,8 @@ class Router
     public function parse_route($request)
     {
         $this->url = str_replace($this::URL_START_DELETE,"",$this->url);
-        var_dump($this->url);
+        $explode_url=explode("/",$this->url); 
+        var_dump($explode_url);
     }
 }
 

@@ -14,7 +14,7 @@ class Request
 
     function __construct()
     {
-        echo"Lanzamos Request";
+        
     }
 
     public function getController()
