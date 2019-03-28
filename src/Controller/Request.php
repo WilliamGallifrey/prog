@@ -32,11 +32,6 @@ class Request
         return $this->params;
     }
 
-    public function getParams()
-    {
-        return $this->params;
-    }
-
     public function setController($controller)
     {
         $this->controller = $controller;
