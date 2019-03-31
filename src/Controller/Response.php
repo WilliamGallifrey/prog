@@ -1,6 +1,6 @@
 <?php
 
-namespace namespace PPR\Controller;
+namespace PPR\Controller;
 
 /*
 *Response
@@ -24,6 +24,8 @@ class Response
     function setContent($content)
     {
         $this->content = $content;
+
+        return $this;
     }
 }
 
