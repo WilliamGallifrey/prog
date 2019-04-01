@@ -1,5 +1,6 @@
 <?php
 namespace PPR\Core;
+use PPR\Controller\Request;
 
 /*
 *Controller interface

@@ -9,17 +9,12 @@ use PPR\Core\Controller;
 *MenuController
 */
 
-class MenuController implements Controller
+class MenuController extends Controller
 {
     function __construct()
     {
-        echo "MenuController";
     }
 
-    function index($request)
-    {
-        echo"index";
-    }
 }
 
 ?>

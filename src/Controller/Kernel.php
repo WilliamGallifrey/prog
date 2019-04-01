@@ -61,10 +61,8 @@ class Kernel
 
     public function finish_kernel()
     {
-        echo $his->response->getContent();
-    }
-
-    
+        echo $this->response->getContent();
+    }   
 }
 
 ?>
