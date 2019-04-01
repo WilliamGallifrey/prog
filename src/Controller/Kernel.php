@@ -12,7 +12,8 @@ class Kernel
 {
     private $router;
     private $request;
-    private $logger;
+    private $response;
+    private $logger;    
 
     function __construct()
     {
@@ -50,12 +51,17 @@ class Kernel
         $actionName = $this->request->getAction();
         if(!$actionName)
         {
-            call_user_func_array(array($controller,"index"),array($this->request));
+            $this->response = call_user_func_array(array($controller,"index"),array($this->request));
         }
         else
         {
-            call_user_func_array(array($controller,$actionName),array($this->request));
+            $this->response = call_user_func_array(array($controller,$actionName),array($this->request));
         }
+    }
+
+    public function finish_kernel()
+    {
+        echo $his->response->getContent();
     }
 
     
