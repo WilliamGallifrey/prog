@@ -19,6 +19,8 @@ class Kernel
         $this->router = new Router();
         $this->request = new Request();
         $this->logger = new Logger('ppr');
+        $this->logger->pushHandler(new StreamHandler(__DIR__.'/../../var/log/ppr_log.log', Logger::DEBUG));
+        $this->logger->info("Kernel ha sido lanzado");
 
     }
 
@@ -26,9 +28,37 @@ class Kernel
     {
         $this->router->start_router();
         $this->router->parse_route($this->request);
-        $this->logger->pushHandler(new StreamHandler(__DIR__.'/../../var/log/ppr_log.log', Logger::DEBUG));
-        $this->logger->info("Kernel ha sido lanzado");
+        $this->logger->info('Ruta solicitada: ',
+            array('Controlador' => $this->request->getController(),
+            'Accion' => $this->request->getAction(),
+            'Controlador' => $this->request->getParams()));
+        
     }
+
+    public function start_action()
+    {
+        $controllerName = $this->request->getController();
+        if(!$controllerName)
+        {
+            $controller = new Actions\HomeController();
+        }
+        else
+        {
+            $controllerName = "PPR\\Controller\\Actions\\".ucFirst($controllerName)."Controller";
+            $controller = new $controllerName;
+        }
+        $actionName = $this->request->getAction();
+        if(!$actionName)
+        {
+            call_user_func_array(array($controller,"index"),array($this->request));
+        }
+        else
+        {
+            call_user_func_array(array($controller,$actionName),array($this->request));
+        }
+    }
+
+    
 }
 
 ?>
