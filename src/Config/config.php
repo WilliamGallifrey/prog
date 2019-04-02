@@ -7,5 +7,5 @@ $config['ROOT_SRC'] = __DIR__.'/../';
 $config['DB_SERVER'] = 'localhost';
 $config['DB_USER'] = 'root';
 $config['DB_PASS'] = '';
-$config['DBDB'] = 'base_datos';
+$config['DBDB'] = 'prog';
 ?>

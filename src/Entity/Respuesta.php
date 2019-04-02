@@ -5,10 +5,10 @@ use PPR\Core\Model;
 
 
 /*
-*EntidadPrueba
+*Respuesta
 */
 
-class EntidadPrueba extends Model
+class Respuesta extends Model
 {
     private $id = "";
     private $nombre = "";
@@ -23,7 +23,7 @@ class EntidadPrueba extends Model
     {
         $conexion = parent::getBdd();
         
-        $consulta = "SELECT * FROM tabla";
+        $consulta = "SELECT * FROM respuesta";
         $resultado = $conexion->query($consulta);
 
         return $resultado;

@@ -29,6 +29,16 @@ class Test extends Model
         return $resultado;
     }
 
+    public function getPreguntas($tema)
+    {
+        $conexion = parent::getBdd();
+        
+        $consulta = "SELECT * FROM pregunta WHERE tema = $tema LIMIT 30";
+        $resultado = $conexion->query($consulta);
+
+        return $resultado;
+    }
+
     public function getId()
     {
         return $this->id;

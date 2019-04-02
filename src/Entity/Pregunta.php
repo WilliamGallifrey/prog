@@ -10,9 +10,10 @@ use PPR\Core\Model;
 
 class Pregunta extends Model
 {
-    private $id = "";
-    private $nombre = "";
-    private $foo = "";
+    private $codpregunta = "";
+    private $texto = "";
+    private $imagen = "";
+    private $tema = "";
 
     public function __construct()
     {
@@ -29,34 +30,54 @@ class Pregunta extends Model
         return $resultado;
     }
 
-    public function getId()
+    public function correcta()
     {
-        return $this->id;
+        $conexion = parent::getBdd();
+        
+        $consulta = "SELECT * FROM pregunta";
+        $resultado = $conexion->query($consulta);
+
+        return $resultado;
     }
 
-    public function getNombre()
+    public function getCodpregunta()
     {
-        return $this->nombre;
+        return $this->codpregunta;
     }
 
-    public function getFoo()
+    public function getTexto()
     {
-        return $this->foo;
+        return $this->texto;
     }
 
-    public function setId($id)
+    public function getImagen()
     {
-        $this->id = $id ;
+        return $this->imagen;
     }
 
-    public function setNombre($nombre)
+    public function getTema()
     {
-        $this->nombre = $nombre ;
+        return $this->tema;
     }
 
-    public function setFoo($foo)
+    public function setCodPregunta($codpregunta)
     {
-        $this->foo = $foo ;
+        $this->codpregunta = $codpregunta ;
+    }
+
+    public function setTexto($texto)
+    {
+        $this->texto = $texto ;
+    }
+
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen ;
+    }
+
+    public function setTema($tema)
+    {
+        $this->tema = $tema ;
     }
 
 }
