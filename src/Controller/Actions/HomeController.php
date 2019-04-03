@@ -18,12 +18,6 @@ class HomeController extends Controller
     {
     }
 
-    function index(Request $request)
-    {
-        $u = new Usuario();
-        $us = $u->getId();
-    }
-
 }
 
 ?>

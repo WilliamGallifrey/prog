@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <header><h1>Layout principal</h1></header>
+    <header><h1>Bar de Will</h1></header>
     <?php
         echo $content_body;
     ?>
