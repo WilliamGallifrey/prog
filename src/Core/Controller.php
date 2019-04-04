@@ -25,6 +25,12 @@ class Controller implements ControllerInterface
         ob_start();
         require(__DIR__."/../Views/".$vista.".php");
         $content_body = ob_get_clean();
+
+        ob_start();
+        require(__DIR__."/../Views/css/".$vista."css.php");
+        $stylesheets = ob_get_clean();
+
+
         if($layout == null)
         {
             ob_start();

@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>
+    
+   </title> 
+
+   <?php
+        echo $stylesheets;
+    ?>
 </head>
-<body>
-    <header><h1>Bar de Will</h1></header>
+
     <?php
         echo $content_body;
     ?>
-</body>
+
 </html>
