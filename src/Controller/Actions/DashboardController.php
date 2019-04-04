@@ -9,7 +9,7 @@ use PPR\Core\Controller;
 *MenuController
 */
 
-class LoginController extends Controller
+class DashboardController extends Controller
 {
     function __construct()
     {
