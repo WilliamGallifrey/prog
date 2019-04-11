@@ -63,15 +63,15 @@ for ($y=0; $y < 30 ; $y++) {
     echo utf8_encode( "<h2>$texto[$y]</h2>");
     echo "<img src='$imagen[$y]'><br>";
     
-    //echo "<select name='pregunta$y' form='test'>";
+   
    while (true){
     
-    echo utf8_encode( "<input type=radio name=respueta$pregunta[$y]>".$textorespuesta[$a]."<br>");
-    echo utf8_encode( "<input type=radio name=respueta$pregunta[$y]>".$textorespuesta[$b]."<br>");
-    echo utf8_encode( "<input type=radio name=respueta$pregunta[$y]>".$textorespuesta[$c]."</input><br>");
+    echo utf8_encode( "<input type=radio name=respuesta$y>".$textorespuesta[$a]."<br>");
+    echo utf8_encode( "<input type=radio name=respuesta$y>".$textorespuesta[$b]."<br>");
+    echo utf8_encode( "<input type=radio name=respuesta$y>".$textorespuesta[$c]."</input><br>");
         break;
     }
- //   echo "</select>";
+
      $a=$a+3;
      $b=$b+3;
      $c=$c+3;
