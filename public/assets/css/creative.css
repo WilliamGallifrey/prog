@@ -10546,8 +10546,8 @@
   header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 72px);
-    background: url("../img/FondoWeb.png");
-    background: url("../img/FondoWeb.png");
+    background: url("../images/FondoWeb.png");
+    background: url("../images/FondoWeb.png");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;

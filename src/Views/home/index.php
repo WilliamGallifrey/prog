@@ -110,6 +110,6 @@
   <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+  <script src="assets/js/creative.min.js"></script>
 
 </body>
