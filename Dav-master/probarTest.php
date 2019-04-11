@@ -67,8 +67,8 @@ for ($y=0; $y < 30 ; $y++) {
    while (true){
     
     echo utf8_encode( "<input type=radio name=respuesta$y>".$textorespuesta[$a]."<br>");
-    echo utf8_encode( "<input type=radio name=respueta$y>".$textorespuesta[$b]."<br>");
-    echo utf8_encode( "<input type=radio name=respueta$y>".$textorespuesta[$c]."</input><br>");
+    echo utf8_encode( "<input type=radio name=respuesta$y>".$textorespuesta[$b]."<br>");
+    echo utf8_encode( "<input type=radio name=respuesta$y>".$textorespuesta[$c]."</input><br>");
         break;
     }
 
