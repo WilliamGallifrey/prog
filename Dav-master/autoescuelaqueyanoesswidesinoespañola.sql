@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2019 a las 11:42:06
+-- Tiempo de generación: 12-04-2019 a las 11:11:49
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -36,6 +36,46 @@ CREATE TABLE `failsxusu` (
   `idfalla` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `failsxusu`
+--
+
+INSERT INTO `failsxusu` (`id`, `idUsuario`, `idfalla`) VALUES
+(1, 1, 45181914),
+(2, 1, 32298880),
+(3, 1, 76346356),
+(4, 1, 24026273),
+(5, 1, 68158026),
+(6, 1, 85764101),
+(7, 1, 55960706),
+(8, 1, 22342164),
+(9, 1, 17456438),
+(10, 1, 74691498),
+(11, 1, 63870540),
+(12, 1, 10071569),
+(13, 1, 25589493),
+(14, 1, 45644277),
+(15, 1, 21149161),
+(16, 1, 90628258),
+(17, 1, 34631938),
+(18, 1, 45181914),
+(19, 1, 32298880),
+(20, 1, 76346356),
+(21, 1, 24026273),
+(22, 1, 68158026),
+(23, 1, 85764101),
+(24, 1, 55960706),
+(25, 1, 22342164),
+(26, 1, 17456438),
+(27, 1, 74691498),
+(28, 1, 63870540),
+(29, 1, 10071569),
+(30, 1, 25589493),
+(31, 1, 45644277),
+(32, 1, 21149161),
+(33, 1, 90628258),
+(34, 1, 34631938);
+
 -- --------------------------------------------------------
 
 --
@@ -46,9 +86,18 @@ CREATE TABLE `historialtest` (
   `id` int(11) NOT NULL,
   `idTest` int(11) NOT NULL,
   `usuario` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `resultado` int(11) NOT NULL,
+  `resultado` varchar(11) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `historialtest`
+--
+
+INSERT INTO `historialtest` (`id`, `idTest`, `usuario`, `resultado`, `fecha`) VALUES
+(1, 1, 'admin', 'APTO', '2019-04-12 07:46:06'),
+(2, 86, 'admin', 'NO APTO', '2019-04-12 08:05:55'),
+(3, 56, 'admin', 'NO APTO', '2019-04-12 09:06:47');
 
 -- --------------------------------------------------------
 
@@ -61,6 +110,13 @@ CREATE TABLE `nivel` (
   `nivel` int(11) NOT NULL,
   `experiencia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `nivel`
+--
+
+INSERT INTO `nivel` (`id`, `nivel`, `experiencia`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -4819,6 +4875,13 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `usuario`, `email`, `password`, `rol`, `nivel`, `experiencia`) VALUES
+(1, 'admin', 'admin@admin.com', 'admin', 'admin', 1, 1);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -4888,19 +4951,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `failsxusu`
 --
 ALTER TABLE `failsxusu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `historialtest`
 --
 ALTER TABLE `historialtest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `nivel`
 --
 ALTER TABLE `nivel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `pregunta`
@@ -4930,7 +4993,7 @@ ALTER TABLE `testxpregunta`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
