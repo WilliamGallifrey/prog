@@ -5,21 +5,23 @@ $conexion = new mysqli("localhost", "root", "", "prog");
     //Ordenado por ascendente
     //$selectCodPregunta = mysqli_query($conexion,"SELECT DISTINCT `pregunta` FROM `respuesta` ORDER BY `pregunta` ASC LIMIT 30");
 
-    //Ordenador por random 
-    $selectCodPregunta = mysqli_query($conexion,"SELECT DISTINCT `pregunta` FROM `respuesta` ORDER BY RAND() LIMIT 30");
+  
 
-while ($AddArray = mysqli_fetch_assoc($selectCodPregunta)) {
-    
-    $preguntas[] = $AddArray['pregunta'];
-
-}
-
-$contar = count($preguntas);
-var_dump($contar);
-$id=50;
+$id=1;
 //Cambiar este parametro para el id del test e id del test dentro de testtPreguntas
 while($id<101){
+  //Ordenador por random 
+  
+  $selectCodPregunta = mysqli_query($conexion,"SELECT DISTINCT `pregunta` FROM `respuesta` ORDER BY RAND() LIMIT 30");
 
+  while ($AddArray = mysqli_fetch_assoc($selectCodPregunta)) {
+      
+      $preguntas[] = $AddArray['pregunta'];
+  
+  }
+  $contar = count($preguntas);
+var_dump($contar);
+  
 var_dump($preguntas);
 
 echo "<br>";
