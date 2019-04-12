@@ -34,6 +34,7 @@ for ($i=0; $i<$contar ; $i++) {
     $hola = mysqli_query($conexion,"INSERT INTO `testxpregunta` (`testid`, `preguntaid`) VALUES ('$id', $preguntas[$i])");
     var_dump($hola);
 }
+unset($preguntas); 
 $id++;
 }
 
