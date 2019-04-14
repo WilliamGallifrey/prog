@@ -3267,7 +3267,7 @@ CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(20) CHARACTER SET utf8 NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `password` varchar(61) CHARACTER SET utf8 NOT NULL,
   `rol` varchar(20) CHARACTER SET utf8 NOT NULL DEFAULT 'alumno',
   `nivel` int(11) NOT NULL DEFAULT '1',
   `experiencia` int(11) NOT NULL DEFAULT '0'
