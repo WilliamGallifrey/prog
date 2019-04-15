@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-04-2019 a las 16:11:52
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.4
+-- Tiempo de generación: 15-04-2019 a las 10:20:44
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -49,6 +49,13 @@ CREATE TABLE `historialtest` (
   `resultado` varchar(11) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `historialtest`
+--
+
+INSERT INTO `historialtest` (`id`, `idTest`, `usuario`, `resultado`, `fecha`) VALUES
+(4, 42, 'admin', 'NO APTO', '2019-04-15 07:35:24');
 
 -- --------------------------------------------------------
 
@@ -3278,7 +3285,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `email`, `password`, `rol`, `nivel`, `experiencia`) VALUES
-(1, 'admin', 'admin@admin.com', 'admin', 'admin', 1, 1);
+(1, 'admin', 'admin@admin.com', 'admin', 'admin', 1, 1),
+(2, 'david', 'davidvm99@gmail.com', '$2y$10$5I3UhgF2QYAv8qPm4QAxvOEF7E8rUpm/pOq8ad6SihJfy/qMC0FcC', 'alumno', 1, 0),
+(3, 'david2', 'davidvm991@gmail.com', '$2y$10$vJg6.xmXtEe09MEq9Qo.JONZc1s0vbI.pp1VbbZQtbXCPhWla253a', 'alumno', 1, 0);
 
 --
 -- Índices para tablas volcadas
@@ -3340,6 +3349,7 @@ ALTER TABLE `testxpregunta`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `usuario` (`usuario`),
+  ADD UNIQUE KEY `id` (`id`),
   ADD KEY `nivel` (`nivel`);
 
 --
@@ -3356,7 +3366,7 @@ ALTER TABLE `failsxusu`
 -- AUTO_INCREMENT de la tabla `historialtest`
 --
 ALTER TABLE `historialtest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `nivel`
@@ -3392,7 +3402,7 @@ ALTER TABLE `testxpregunta`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -3411,12 +3421,6 @@ ALTER TABLE `failsxusu`
 ALTER TABLE `historialtest`
   ADD CONSTRAINT `historialtest_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`usuario`),
   ADD CONSTRAINT `historialtest_ibfk_2` FOREIGN KEY (`idTest`) REFERENCES `test` (`id`);
-
---
--- Filtros para la tabla `respuesta`
---
-ALTER TABLE `respuesta`
-  ADD CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`pregunta`) REFERENCES `pregunta` (`codpregunta`);
 
 --
 -- Filtros para la tabla `testxpregunta`
