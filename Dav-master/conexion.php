@@ -18,5 +18,16 @@ class conexion{
         return $this->conexion;
     }
     
-    
+    public function sessionStart(){
+      
+        if(!isset($_SESSION["username"])){
+        header("Location: login.php");
+        exit();
+        }
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+
+        }
+
+    }
 }
