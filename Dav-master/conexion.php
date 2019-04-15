@@ -17,7 +17,7 @@ class conexion{
     public function getConexion(){
         return $this->conexion;
     }
-    
+    /*
     public function sessionStart(){
       
         if(!isset($_SESSION["username"])){
@@ -30,4 +30,5 @@ class conexion{
         }
 
     }
+    */
 }
