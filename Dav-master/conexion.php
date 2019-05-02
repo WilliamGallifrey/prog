@@ -17,5 +17,7 @@ class conexion{
     public function getConexion(){
         return $this->conexion;
     }
- 
+    
+    
+
 }

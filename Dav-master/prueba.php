@@ -9,8 +9,8 @@ $usuario->getUsuarioOnline();
 
 
 if (!empty($_POST)) {
-    $corregirTest = $test->corregirTest($conexion);
-    echo "Registrado Correctamente.";
+    $corregirTest = $test->corregirTest($conexion, $_SESSION['username']);
+
     
     
 }else {

@@ -13,7 +13,7 @@ class test extends conexion{
 
     public function generarTest($conexion){
         //Sacamos el test aleatorio
-        $randomTest = mt_rand(1,100);
+        $randomTest = mt_rand(1,50);
         
       
         $selectTodasLasPreguntas = mysqli_query($conexion,"SELECT `preguntaid` FROM `testxpregunta` where `testid` = $randomTest ORDER BY RAND()");
@@ -67,12 +67,10 @@ class test extends conexion{
         echo "<input type='hidden' name='codigoTest' value='$randomTest'>";
         for ($y=0; $y < 30 ; $y++) { 
             echo utf8_encode( "<h2>$texto[$y]</h2>");
-            echo "<img src='$imagen[$y]'><br>";
-            
-         
+            echo "<img src='$imagen[$y]'><br>"; 
            while (true){
             
-            echo utf8_encode( "<input type=radio name='respuesta$y' value='$codrespuesta[$a]'>".$textorespuesta[$a]."<br>");
+            echo utf8_encode( "<input type=radio name='respuesta$y' value='$codrespuesta[$a]'> ".$textorespuesta[$a]."<br>");
             echo utf8_encode( "<input type=radio name='respuesta$y'  value='$codrespuesta[$b]'>".$textorespuesta[$b]."<br>");
             echo utf8_encode( "<input type=radio name='respuesta$y' value='$codrespuesta[$c]'>".$textorespuesta[$c]."</input><br>");
                 break;
@@ -90,12 +88,11 @@ class test extends conexion{
     }
    
     
-    public function corregirTest($conexion){
-        // Cambiar usuario Y EL id
-        $id=1;
-        $usuario = "admin";
-
-
+    public function corregirTest($conexion,$usuario){
+        $usuario  = $usuario;
+        $idSelect = mysqli_query($conexion, "SELECT `id` FROM `usuario` WHERE `usuario` = '$usuario'");
+        $idSelect1 = mysqli_fetch_assoc($idSelect);
+        $id = $idSelect1['id'];
         $mal = 0;
         $bien = 0;
         for ($i=0; $i <30 ; $i++) {
@@ -138,8 +135,7 @@ class test extends conexion{
                 $correct3 = $correct2['texto'];
               
             }
-            $errorxTest= mysqli_query($conexion, "INSERT INTO `failsxusu` (`idUsuario`, `idfalla`) VALUES ( $id,'$pregunta[$w]')");       
-            
+            $errorxTest= mysqli_query($conexion, "INSERT INTO `failsxusu` (`idUsuario`, `idfalla`) VALUES ( $id,$pregunta[$w])");       
                echo "<b>Has fallado en esta pregunta:</b> ".utf8_encode($correcta3). " <b>La respuesta correcta era:</b> " .utf8_encode($correct3)." <br>";
                $mal = $mal + 1;
            }else {
@@ -161,7 +157,8 @@ class test extends conexion{
                 
             }
             //Hacemos el insert my people
-            $insertamosEltest= mysqli_query($conexion,"INSERT INTO `historialtest` (`idTest`, `usuario`, `resultado`) VALUES ($codigoTest, '$usuario', '$resultadoTest')");       
+            $insertamosEltest= mysqli_query($conexion,"INSERT INTO `historialtest` (`idTest`, `usuario`, `resultado`,`fallos`) VALUES ($codigoTest, '$usuario', '$resultadoTest',$mal)");    
+               
 
     
     }
