@@ -13,7 +13,7 @@ class Kernel
     private $router;
     private $request;
     private $response;
-    private $logger;    
+    private $logger;
 
     function __construct()
     {
