@@ -1,3 +1,4 @@
+<?php session_start();?>
     <body class="enlarged" data-keep-enlarged="true">
 
         <!-- Begin page -->

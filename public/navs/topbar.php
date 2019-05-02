@@ -115,7 +115,7 @@
                                         <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                     </span>
                                     <span>
-                                        <span class="account-user-name">Paco Toloco</span>
+                                        <span class="account-user-name"><?php echo $_SESSION['username']; ?></span>
                                         <span class="account-position">Nivel 16</span>
                                     </span>
                                 </a>

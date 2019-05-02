@@ -14,7 +14,7 @@
           </li>
           <li class="nav-item">
             <a class="btn btn-light btn-sm js-scroll-trigger" href="#about">Iniciar Sesión</a>
-            <a class="btn btn-light btn-sm js-scroll-trigger" href="login/sucio">Inicio de sesión sucio</a>
+            <a class="btn btn-light btn-sm js-scroll-trigger" href="login/sucio">Inicio de sesión david</a>
           </li>
         </ul>
       </div>

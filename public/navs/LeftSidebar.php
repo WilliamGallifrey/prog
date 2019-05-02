@@ -17,7 +17,7 @@
     <ul class="metismenu side-nav">
 
         <li class="side-nav-item">
-            <a href="dashboard.php" class="side-nav-link">
+            <a href="dashboard" class="side-nav-link">
                 <i class="dripicons-home"></i>
                 <span class="badge badge-success float-right">3</span>
                 <span> Inicio </span>
@@ -35,7 +35,7 @@
             </a>
             <ul class="side-nav-second-level" aria-expanded="false">
                 <li>
-                    <a href="practica-test.php">Practicar Test</a>
+                    <a href="hacertest">Practicar Test</a>
                 </li>
                 <li>
                     <a href="apps-tasks.html">Examen</a>
