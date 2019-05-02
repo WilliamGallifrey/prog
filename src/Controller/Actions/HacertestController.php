@@ -16,7 +16,10 @@ class HacertestController extends Controller
     }
 
     function index($request){
-       return $this->render("home/hacertest");
+        if(!isset($_SESSION['username']))
+            header("Location: ./");
+        else 
+            return $this->render("home/hacertest");
       }
       
     

@@ -16,7 +16,11 @@ class DashboardController extends Controller
     }
 
     function index($request){
-       return $this->render("home/dashboard");
+
+        if(!isset($_SESSION['username']))
+            header("Location: ./");
+        else
+            return $this->render("home/dashboard");
       }
     
 

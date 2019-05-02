@@ -45,6 +45,14 @@ class LoginController extends Controller
             return header("Location: ../");
 
     }
+
+    function logout($request)
+    {
+        session_start();
+        unset($_SESSION['username']);
+        return header("Location: ../");
+
+    }
 }
 
 ?>

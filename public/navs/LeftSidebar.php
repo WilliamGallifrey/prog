@@ -35,10 +35,10 @@
             </a>
             <ul class="side-nav-second-level" aria-expanded="false">
                 <li>
-                    <a href="hacertest">Practicar Test</a>
+                    <a href="practica">Practicar Test</a>
                 </li>
                 <li>
-                    <a href="apps-tasks.html">Examen</a>
+                    <a href="hacertest">Examen</a>
                 </li>
             </ul>
         </li>
