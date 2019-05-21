@@ -3,7 +3,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"> <h1 class="text-white">LOGO</h1> </a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> <h1 class="text-white">WETEST</h1> </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,6 +14,7 @@
           </li>
           <li class="nav-item">
             <a class="btn btn-light btn-sm js-scroll-trigger" href="#about">Iniciar Sesión</a>
+            <a class="btn btn-light btn-sm js-scroll-trigger" href="login/sucio">Inicio de sesión david</a>
           </li>
         </ul>
       </div>
@@ -41,7 +42,7 @@
         <div class="col-lg-8 text-center">
           <h1 class="text-blue mt-0">Tenemos todo lo que necesitas!</h1>
           <hr class="divider my-4">
-          <h3 class="text-blue-50 mb-4">{nombredecompañía} dispone de un panel donde poder observar y analizar tu progreso según vas completando los tests</h3>
+          <h3 class="text-blue-50 mb-4">Wetest dispone de un panel donde poder observar y analizar tu progreso según vas completando los tests</h3>
           <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Ver Características</a>
         </div>
       </div>
@@ -97,7 +98,7 @@
   <!-- Footer -->
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - {nombredecompañia}</div>
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Wetest</div>
     </div>
   </footer>
 
@@ -110,6 +111,6 @@
   <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+  <script src="assets/js/creative.min.js"></script>
 
 </body>

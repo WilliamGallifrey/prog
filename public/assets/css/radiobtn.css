@@ -1,0 +1,31 @@
+.radiobtn{
+    background-color: #2f3640;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: 0.5s;
+    padding: 1rem;
+    vertical-align: middle;
+    margin-top: .20em;
+    font-size: 1.5rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+}
+
+.radiobtncircle{
+    display: none;
+}
+
+label:hover, input[type="radio"]:checked + label{
+    border-color: rgba(255, 255, 255, 0.623);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.radiomargin{
+    margin-top: 1em;
+}
+
+.radioimagen{
+    padding: 10rem;
+}
