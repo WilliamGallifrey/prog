@@ -20,7 +20,7 @@ class Controller implements ControllerInterface
         return $this->render("home/index");
     }
 
-    function render($vista,$layout=null){
+    function render($vista,$data=null,$layout=null){
         
         ob_start();
         require(__DIR__."/../Views/".$vista.".php");
