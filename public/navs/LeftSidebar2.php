@@ -6,10 +6,10 @@
     <!-- LOGO -->
     <a href="dashboard" class="logo text-center">
         <span class="logo-lg">
-            <img src="assets/images/logo.png" alt="" height="16">
+            <img src="../assets/images/logo.png" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="assets/images/logo_sm.png" alt="" height="16">
+            <img src="../assets/images/logo_sm.png" alt="" height="16">
         </span>
     </a>
 
@@ -90,7 +90,7 @@
         <a href="javascript: void(0);" class="float-right close-btn text-white">
             <i class="mdi mdi-close"></i>
         </a>
-        <img src="assets/images/help-icon.svg" height="90" alt="Helper Icon Image" />
+        <img src="../assets/images/help-icon.svg" height="90" alt="Helper Icon Image" />
         <h5 class="mt-3">Mejora tu Cuenta</h5>
         <p class="mb-3">Consejos, Guías y toda la información para hacerte todo un señor de la carretera!</p>
         <a href="javascript: void(0);" class="btn btn-outline-light btn-sm">Mejorar</a>

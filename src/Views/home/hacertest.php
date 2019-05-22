@@ -5,7 +5,7 @@
 
             <!-- ========== Left Sidebar Start ========== -->
             <?php
-                 include "./navs/LeftSidebar.php";
+                 include "./navs/LeftSidebar2.php";
             ?>
             <!-- Left Sidebar End -->
 
@@ -18,7 +18,7 @@
 
                     <!-- Topbar Start -->
                     <?php
-                         include "./navs/topbar.php";
+                         include "./navs/topbar2.php";
                      ?>
                     <!-- end Topbar -->
 
@@ -31,43 +31,78 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                     </div>
-                                    <h4 class="page-title">Tema 1. La carretera - Test 1</h4>
+                                    <h4 class="page-title">
+                                    <?php
+
+                                    if(isset($data['test']))
+                                        echo $data['testnombre'];
+                                    else
+                                        echo"Tema 1. La carretera - Test 1";
+
+                                    ?>
+                                    </h4>
                                 </div>
                             </div>
                         </div>     
                         <!-- end page title --> 
 
+                        <?php
 
-                        <div class="row">
-                            <div class="col-md-3 align-self-center">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img class="col-12" src="./assets/images/preguntastest/mantenimiento-del-neumatico.jpg" alt="">
+                        $testfinal = array();
+
+
+
+                        while($row = mysqli_fetch_assoc($data['test']))
+                        {
+                            array_push($testfinal,$row);
+                        }
+                        
+                        $i=0;
+                        $pos = 0;
+
+
+                    for ($j=0; $j < 30 ; $j++)
+                    {
+                        
+                        $preg = $j+1;
+                        $pos1 = $pos+1;
+                        $pos2 = $pos+2;
+
+                        if($i%2 == 0)
+                        {
+                        
+                            echo"
+                            
+                            <div class='row'>
+                            <div class='col-md-3 align-self-center'>
+                                <div class='card'>
+                                    <div class='card-body'>
+                                        <img class='col-12' src=".$testfinal[$j]['imagen']."' alt=''>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-9">
-                                <div class="card">
-                                    <div class="card-body radioimagen">
-                                        <h3 class="header-title">Pregunta 1</h3>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h1 class="mb-1 mt-3 font-weight-bold text-white">¿Es conveniente revisar con frecuencia el estado de los neumáticos?</h1>
+                            <div class='col-md-9'>
+                                <div class='card'>
+                                    <div class='card-body radioimagen'>
+                                        <h3 class='header-title'>Pregunta $preg</h3>
+                                        <div class='row'>
+                                            <div class='col-md-12'>
+                                                <h1 class='mb-1 mt-3 font-weight-bold text-white'>".$testfinal[$pos]['ptexto']."</h1>
                                             </div>
-                                            <div class="col-md-12 radiomargin">
+                                            <div class='col-md-12 radiomargin'>
                                                 <div>
-                                                    <input class="radiobtncircle" type="radio" id="huey" name="drone" value="huey">
-                                                    <label class="col-md-10 radiobtn" for="huey"><b>a)</b> Sí, con el fin de que no se ponga en riesgo nuestra seguridad</label>
+                                                    <input class='radiobtncircle' type='radio' id='huey' name='drone' value='".$testfinal[$pos]['correcta']."'>
+                                                    <label class='col-md-10 radiobtn' for='huey'><b>a)</b> ".$testfinal[$pos]['rtexto']."</label>
                                                 </div>
 
                                                 <div>
-                                                     <input class="radiobtncircle" type="radio" id="dewey" name="drone" value="dewey">
-                                                    <label class="col-md-10 radiobtn" for="dewey"><b>b)</b> Sí, excepto si los neumáticos son sin cámara </label>
+                                                     <input class='radiobtncircle' type='radio' id='dewey' name='drone' value='".$testfinal[$pos1]['correcta']."'>
+                                                    <label class='col-md-10 radiobtn' for='dewey'><b>b)</b>".$testfinal[$pos1]['rtexto']."</label>
                                                 </div>
 
                                                 <div>
-                                                    <input class="radiobtncircle" type="radio" id="louie" name="drone" value="louie">
-                                                    <label class="col-md-10 radiobtn" for="louie"><b>c)</b> No, solamente cada 5 años como máximo</label>
+                                                    <input class='radiobtncircle' type='radio' id='louie' name='drone' value='".$testfinal[$pos2]['correcta']."'>
+                                                    <label class='col-md-10 radiobtn' for='louie'><b>c)</b>".$testfinal[$pos2]['rtexto']."</label>
                                                 </div>
                                             </div>
                                         </div> <!-- end row -->
@@ -76,33 +111,39 @@
                                 </div> <!-- end card-->
                             </div> <!-- end col-->
                         </div> 
-                        <!-- end row-->
+                        <!-- end row-->                            
+                            
+                            ";
 
-
-
-                        <div class="row" id="pregunta2">
-                            <div class="col-md-9">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h3 class="header-title">Pregunta 2</h3>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h1 class="mb-1 mt-3 font-weight-bold text-white">¿Qué efectos puede producir un resfriado en la conducción?</h1>
+                        }
+                        else
+                        {
+                            echo
+                            "
+                            
+                            <div class='row' id='pregunta2'>
+                            <div class='col-md-9'>
+                                <div class='card'>
+                                    <div class='card-body'>
+                                        <h3 class='header-title'>Pregunta $preg</h3>
+                                        <div class='row'>
+                                            <div class='col-md-12'>
+                                                <h1 class='mb-1 mt-3 font-weight-bold text-white'>".$testfinal[$pos]['ptexto']."</h1>
                                             </div>
-                                            <div class="col-md-12 radiomargin">
+                                            <div class='col-md-12 radiomargin'>
                                                 <div>
-                                                    <input class="radiobtncircle" type="radio" id="huey2" name="drone2" value="huey2">
-                                                    <label class="col-md-10 radiobtn" for="huey2"><b>a)</b> Somnolencia y pérdida de concentración</label>
+                                                    <input class='radiobtncircle' type='radio' id='huey2' name='drone2' value='".$testfinal[$pos]['correcta']."'>
+                                                    <label class='col-md-10 radiobtn' for='huey2'><b>a)</b> ".$testfinal[$pos]['rtexto']."</label>
                                                 </div>
 
                                                 <div>
-                                                    <input class="radiobtncircle" type="radio" id="dewey2" name="drone2" value="dewey2">
-                                                    <label class="col-md-10 radiobtn" for="dewey2"><b>b)</b> Desorientación</label>
+                                                    <input class='radiobtncircle' type='radio' id='dewey2' name='drone2' value='".$testfinal[$pos1]['correcta']."'>
+                                                    <label class='col-md-10 radiobtn' for='dewey2'><b>b)</b>  ".$testfinal[$pos1]['rtexto']."</label>
                                                 </div>
 
                                                 <div>
-                                                    <input class="radiobtncircle" type="radio" id="louie2" name="drone2" value="louie2">
-                                                    <label class="col-md-10 radiobtn" for="louie2"><b>c)</b> Impulsividad</label>
+                                                    <input class='radiobtncircle' type='radio' id='louie2' name='drone2' value='".$testfinal[$pos2]['correcta']."'>
+                                                    <label class='col-md-10 radiobtn' for='louie2'><b>c)</b>  ".$testfinal[$pos2]['rtexto']."</label>
                                                 </div>
                                             </div>
                                         </div> <!-- end row -->
@@ -110,15 +151,26 @@
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
                             </div> <!-- end col-->
-                            <div class="col-md-3 align-self-center">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img class="col-12" src="./assets/images/preguntastest/resfriado-conduccion.jpg" alt="">
+                            <div class='col-md-3 align-self-center'>
+                                <div class='card'>
+                                    <div class='card-body'>
+                                        <img class='col-12' src='".$testfinal[$j]['imagen']."' alt=''>
                                     </div>
                                 </div>
                             </div>
                         </div> 
                         <!-- end row-->
+
+
+                            ";
+                        }
+
+                        $pos += 3;
+                        $i++;
+                    }
+
+                        
+                        ?>
 
                     </div> <!-- container -->
 
@@ -264,6 +316,27 @@
         <!-- /Right-bar -->
 
 
+        <?php 
+
+        if(isset($data['test']))
+
+        echo'
+
+        <!-- App js -->
+        <script src="../assets/js/app.min.js"></script>
+
+        <!-- Typehead -->
+        <script src="../assets/js/vendor/handlebars.min.js"></script>
+        <script src="../assets/js/vendor/typeahead.bundle.min.js"></script>
+
+        <!-- Demo -->
+        <script src="../assets/js/pages/demo.typehead.js"></script>
+        ';
+
+        else
+
+        echo'
+
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
 
@@ -273,5 +346,9 @@
 
         <!-- Demo -->
         <script src="assets/js/pages/demo.typehead.js"></script>
+
+        ';
+
+        ?>
 
     </body>

@@ -3,6 +3,7 @@
 namespace PPR\Controller\Actions;
 
 use PPR\Core\Controller;
+use PPR\Entity\Test;
 
 
 /*
@@ -16,11 +17,18 @@ class PracticaController extends Controller
     }
 
     function index($request){
+
+        $test = new Test();
+
+        $tests = $test->listAll();
+        $data['tests'] = $tests;
+
         if(!isset($_SESSION['username']))
             header("Location: ./");
         else
-            return $this->render("home/practica");
+            return $this->render("home/practica",$data);
       }
+
     
 
 }
