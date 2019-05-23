@@ -51,7 +51,6 @@
                         $testfinal = array();
 
 
-
                         while($row = mysqli_fetch_assoc($data['test']))
                         {
                             array_push($testfinal,$row);
@@ -77,7 +76,7 @@
                             <div class='col-md-3 align-self-center'>
                                 <div class='card'>
                                     <div class='card-body'>
-                                        <img class='col-12' src=".$testfinal[$j]['imagen']."' alt=''>
+                                        <img class='col-12' src='".$testfinal[$pos]['imagen']."' alt=''>
                                     </div>
                                 </div>
                             </div>
@@ -87,22 +86,22 @@
                                         <h3 class='header-title'>Pregunta $preg</h3>
                                         <div class='row'>
                                             <div class='col-md-12'>
-                                                <h1 class='mb-1 mt-3 font-weight-bold text-white'>".$testfinal[$pos]['ptexto']."</h1>
+                                                <h1 class='mb-1 mt-3 font-weight-bold text-white'>".utf8_encode($testfinal[$pos]['ptexto'])."</h1>
                                             </div>
                                             <div class='col-md-12 radiomargin'>
                                                 <div>
-                                                    <input class='radiobtncircle' type='radio' id='huey' name='drone' value='".$testfinal[$pos]['correcta']."'>
-                                                    <label class='col-md-10 radiobtn' for='huey'><b>a)</b> ".$testfinal[$pos]['rtexto']."</label>
+                                                    <input id='p".$preg."1' class='radiobtncircle' type='radio' name='$preg' value='".$testfinal[$pos]['correcta']."'>
+                                                    <label id='".$preg.$preg."1' class='col-md-10 radiobtn' for='p".$preg."1'><b>a)</b> ".utf8_encode($testfinal[$pos]['rtexto'])."</label>
                                                 </div>
 
                                                 <div>
-                                                     <input class='radiobtncircle' type='radio' id='dewey' name='drone' value='".$testfinal[$pos1]['correcta']."'>
-                                                    <label class='col-md-10 radiobtn' for='dewey'><b>b)</b>".$testfinal[$pos1]['rtexto']."</label>
+                                                     <input id='p".$preg."2' class='radiobtncircle' type='radio'name='$preg' value='".$testfinal[$pos1]['correcta']."'>
+                                                    <label id='".$preg.$preg."2' class='col-md-10 radiobtn' for='p".$preg."2'><b>b)</b>".utf8_encode($testfinal[$pos1]['rtexto'])."</label>
                                                 </div>
 
                                                 <div>
-                                                    <input class='radiobtncircle' type='radio' id='louie' name='drone' value='".$testfinal[$pos2]['correcta']."'>
-                                                    <label class='col-md-10 radiobtn' for='louie'><b>c)</b>".$testfinal[$pos2]['rtexto']."</label>
+                                                    <input id='p".$preg."3' class='radiobtncircle' type='radio' name='$preg' value='".$testfinal[$pos2]['correcta']."'>
+                                                    <label id='".$preg.$preg."3' class='col-md-10 radiobtn' for='p".$preg."3'><b>c)</b>".utf8_encode($testfinal[$pos2]['rtexto'])."</label>
                                                 </div>
                                             </div>
                                         </div> <!-- end row -->
@@ -121,29 +120,29 @@
                             echo
                             "
                             
-                            <div class='row' id='pregunta2'>
+                            <div class='row'>
                             <div class='col-md-9'>
                                 <div class='card'>
                                     <div class='card-body'>
                                         <h3 class='header-title'>Pregunta $preg</h3>
                                         <div class='row'>
                                             <div class='col-md-12'>
-                                                <h1 class='mb-1 mt-3 font-weight-bold text-white'>".$testfinal[$pos]['ptexto']."</h1>
+                                                <h1 class='mb-1 mt-3 font-weight-bold text-white'>".utf8_encode($testfinal[$pos]['ptexto'])."</h1>
                                             </div>
                                             <div class='col-md-12 radiomargin'>
                                                 <div>
-                                                    <input class='radiobtncircle' type='radio' id='huey2' name='drone2' value='".$testfinal[$pos]['correcta']."'>
-                                                    <label class='col-md-10 radiobtn' for='huey2'><b>a)</b> ".$testfinal[$pos]['rtexto']."</label>
+                                                    <input id='p".$preg."1' class='radiobtncircle' type='radio' name='$preg' value='".$testfinal[$pos]['correcta']."'>
+                                                    <label id='".$preg.$preg."1' class='col-md-10 radiobtn' for='p".$preg."1'><b>a)</b> ".utf8_encode($testfinal[$pos]['rtexto'])."</label>
                                                 </div>
 
                                                 <div>
-                                                    <input class='radiobtncircle' type='radio' id='dewey2' name='drone2' value='".$testfinal[$pos1]['correcta']."'>
-                                                    <label class='col-md-10 radiobtn' for='dewey2'><b>b)</b>  ".$testfinal[$pos1]['rtexto']."</label>
+                                                    <input id='p".$preg."2' class='radiobtncircle' type='radio'  name='$preg' value='".$testfinal[$pos1]['correcta']."'>
+                                                    <label id='".$preg.$preg."2' class='col-md-10 radiobtn' for='p".$preg."2'><b>b)</b>  ".utf8_encode($testfinal[$pos1]['rtexto'])."</label>
                                                 </div>
 
                                                 <div>
-                                                    <input class='radiobtncircle' type='radio' id='louie2' name='drone2' value='".$testfinal[$pos2]['correcta']."'>
-                                                    <label class='col-md-10 radiobtn' for='louie2'><b>c)</b>  ".$testfinal[$pos2]['rtexto']."</label>
+                                                    <input id='p".$preg."3' class='radiobtncircle' type='radio' name='$preg' value='".$testfinal[$pos2]['correcta']."'>
+                                                    <label id='".$preg.$preg."3' class='col-md-10 radiobtn' for='p".$preg."3'><b>c)</b>  ".utf8_encode($testfinal[$pos2]['rtexto'])."</label>
                                                 </div>
                                             </div>
                                         </div> <!-- end row -->
@@ -154,7 +153,7 @@
                             <div class='col-md-3 align-self-center'>
                                 <div class='card'>
                                     <div class='card-body'>
-                                        <img class='col-12' src='".$testfinal[$j]['imagen']."' alt=''>
+                                        <img class='col-12' src='".$testfinal[$pos]['imagen']."' alt=''>
                                     </div>
                                 </div>
                             </div>
@@ -171,6 +170,8 @@
 
                         
                         ?>
+
+                    <button class="btn correct btn-primary btn-md btn-block btn waves-effect waves-light cursorpointer" onclick="corregirtest(this)" id="todo-btn-submit">Corregir</button>
 
                     </div> <!-- container -->
 
@@ -324,6 +325,8 @@
 
         <!-- App js -->
         <script src="../assets/js/app.min.js"></script>
+        <script src="../assets/js/corregir.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
         <!-- Typehead -->
         <script src="../assets/js/vendor/handlebars.min.js"></script>
@@ -339,6 +342,8 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/corregir.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
         <!-- Typehead -->
         <script src="assets/js/vendor/handlebars.min.js"></script>
@@ -350,5 +355,6 @@
         ';
 
         ?>
+
 
     </body>

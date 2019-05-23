@@ -116,7 +116,7 @@
                                     </span>
                                     <span>
                                         <span class="account-user-name"><?php echo $_SESSION['username']; ?></span>
-                                        <span class="account-position">Nivel 16</span>
+                                        <span class="account-position">Nivel <?php echo $_SESSION['nivel']; ?></span>
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">

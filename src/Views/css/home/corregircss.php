@@ -8,4 +8,4 @@
   <link href="../../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
-  <link href="../css/creative.css" rel="stylesheet">
+  <link href="../assets/css/creative.css" rel="stylesheet">

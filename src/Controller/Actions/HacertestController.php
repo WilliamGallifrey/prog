@@ -44,6 +44,14 @@ class HacertestController extends Controller
         else
             return $this->render("home/hacertest",$data);
     }
+
+    function corregir()
+    {
+
+
+        $data['res'] = $_POST;
+        return $this->render("home/corregir",$data);
+    }
       
     
 

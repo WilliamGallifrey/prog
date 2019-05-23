@@ -61,8 +61,10 @@ class Usuario extends Model
                 if(password_verify($password,$row['password']))
                 {                   
                     $_SESSION['username'] = $user;
+                    $_SESSION['nivel'] = $row['nivel'];
 
                     $this->usuario = $_SESSION['username'];
+
                     return true;
                 }
                 else

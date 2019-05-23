@@ -1,0 +1,8 @@
+<?php 
+
+$resultados = $data['res'];
+
+
+
+?>
+
