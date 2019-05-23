@@ -32,7 +32,7 @@ class Kernel
         $this->logger->info('Ruta solicitada: ',
             array('Controlador' => $this->request->getController(),
             'Accion' => $this->request->getAction(),
-            'Controlador' => $this->request->getParams()));
+            'Params' => $this->request->getParams()));
         
     }
 

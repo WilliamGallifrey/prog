@@ -60,7 +60,6 @@ class Usuario extends Model
                 $row = mysqli_fetch_assoc($result);
                 if(password_verify($password,$row['password']))
                 {                   
-                    session_start();
                     $_SESSION['username'] = $user;
 
                     $this->usuario = $_SESSION['username'];

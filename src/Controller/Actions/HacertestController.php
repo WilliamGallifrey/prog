@@ -3,6 +3,7 @@
 namespace PPR\Controller\Actions;
 
 use PPR\Core\Controller;
+use PPR\Entity\Test;
 
 
 /*
@@ -21,6 +22,28 @@ class HacertestController extends Controller
         else 
             return $this->render("home/hacertest");
       }
+
+      
+    function elegido($request)
+    {
+        $testid = $_POST['testid'];
+        $testobj = new Test();
+        $test = $testobj->generarTest($testid);
+
+        $testnombre = $testobj->getNombreId($testid);
+
+        $row = \mysqli_fetch_assoc($testnombre);
+
+        $testnombre = $row['nombre'];
+
+        $data['test'] = $test;
+        $data['testnombre'] = $testnombre;
+
+        if(!isset($_SESSION['username']))
+            header("Location: ./");
+        else
+            return $this->render("home/hacertest",$data);
+    }
       
     
 

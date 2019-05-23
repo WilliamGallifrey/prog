@@ -47,48 +47,35 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <p class="mb-1 mt-3 font-weight-bold text-muted">Corregir al responder</p>
-                                                <input type="checkbox" id="switch1" checked data-switch="success"/>
+                                                <input type="checkbox" id="switch1" checked data-switch="success" name="corregir"/>
                                                 <label for="switch1" data-on-label="Si" data-off-label="No"></label>
                                             </div>
                                             <div class="col-md-12">
                                                 <p class="mb-1 mt-3 font-weight-bold text-muted">Mostrar ayuda mientras haces el test</p>
-                                                <input type="checkbox" id="switch2" checked data-switch="success"/>
+                                                <input type="checkbox" id="switch2" checked data-switch="success" name="ayuda"/>
                                                 <label for="switch2" data-on-label="Si" data-off-label="No"></label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p class="mb-1 mt-3 font-weight-bold text-muted">Selecciona un test</p>
-            
-                                                <select class="form-control select2" data-toggle="select2">
+
+                                                <form method="POST" action="hacertest/elegido">
+                                                <select class="form-control select2" data-toggle="select2" name="testid">
                                                     <option>Elegir</option>
-                                                    <optgroup label="Tema 1. La carretera">
-                                                        <option value="AK">Test 1</option>
-                                                        <option value="HI">Test 2</option>
-                                                    </optgroup>
-                                                    <optgroup label="Tema 2. La via">
-                                                        <option value="CA">Test 1</option>
-                                                        <option value="NV">Test 2</option>
-                                                        <option value="OR">Test 3</option>
-                                                        <option value="WA">Test 4</option>
-                                                    </optgroup>
-                                                    <optgroup label="Tema 3. La seguridad">
-                                                        <option value="AZ">Test 1</option>
-                                                        <option value="CO">Test 2</option>
-                                                        <option value="ID">Test 3</option>
-                                                    </optgroup>
-                                                    <optgroup label="Tema 4. Velocidad">
-                                                        <option value="AL">Test 1</option>
-                                                        <option value="AR">Test 2</option>
-                                                        <option value="IL">Test 3</option>
-                                                        <option value="IA">Test 4</option>
-                                                        <option value="KS">Test 5</option>
-                                                    </optgroup>
+                                                    <?php 
+                                                    while($row = mysqli_fetch_assoc($data['tests']))
+                                                    {
+                                                        echo"<option value='$row[id]'>$row[nombre]</option>";
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                         
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
-                                <button type="button" class="btn btn-light">Hacer Test</button>
+                                <input type="submit" class="btn btn-light" value="Hacer Test">
+
+                                </form>
                             </div> <!-- end col-->
                         </div> 
                         <!-- end row-->
